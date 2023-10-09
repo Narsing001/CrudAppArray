@@ -1,0 +1,28 @@
+<h3>Crud Operation Of Array of Object</h3>
+<hr/>
+<input type="text" [disabled]="isDisabled" [(ngModel)]="deptno" placeholder="Deptno"/>
+<input type="text" [(ngModel)]='dname' placeholder="Dname"/>
+<input type="text" [(ngModel)]='dcity' placeholder="Location" />
+<hr/>
+<input type="Button" value="Get Depts" (click)="getDepts_click()"/>
+<input type="Button" value="Add Depts" (click)=" addDepts_click()" />
+<input type="Button" value="Update Depts" (click)=" update_click()">
+<br><br>
+<table border="2" cellSpacing="0" cellpadding="5" width="500">
+    <tr>
+        <th>Dept Number</th>
+        <th>Dept Name</th>
+        <th>Dept Location</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let dept of deptsArray"> 
+        <td>{{dept.deptno}}</td>
+        <td>{{dept.dname}}</td>
+        <td>{{dept.dcity}}</td>
+        <td>
+            <a href="javascript:void(0)" style="margin-right:5px;" (click)="selectDepts_click(dept.deptno)">Select</a>|
+            <a href="javascript:void(0)" (click)="removeDepts_click(dept.deptno)">Remove</a>
+        </td>
+    </tr>
+      
+</table>

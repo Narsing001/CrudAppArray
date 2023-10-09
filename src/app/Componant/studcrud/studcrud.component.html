@@ -1,0 +1,33 @@
+<h3>Student Crud Operation</h3>
+<input type="text" [disabled]="isdisabled" [(ngModel)]="Sid" placeholder="StudId">
+<input type="text" [(ngModel)]="Sname" placeholder="SName">
+<input type="text" [(ngModel)]="Course" placeholder="Course">
+<input type="text" [(ngModel)]="Sage" placeholder="age">
+<input type="email" [(ngModel)]="Semail" placeholder="email"><br>
+
+<br>
+<button type="button" (click)="getData_Click()">Get Data</button>
+<button type="button" (click)="addData_Click()">Add Data</button>
+<button type="button" (click)=" updateData_Click()">Update Data</button>
+<br><br>
+<table border="1" width="600" cellPadding="5" cellSpacing="5">
+    <tr>
+        <th>Sid</th>
+        <th>Sname</th>
+        <th>Course</th>
+        <th>Sage</th>
+        <th>Semail</th>
+        <th>Action</th>
+  </tr>
+  <tr *ngFor="let s of studarray">
+      <td>{{s.Sid}}</td>
+      <td>{{s.Sname}}</td>
+      <td>{{s.Course}}</td>
+      <td>{{s.Sage}}</td>
+      <td>{{s.Semail}}</td>
+      <td>
+          <a href="javascript:void(0)" (click)="select_record(s.Sid)" >Select</a> |
+          <a href="javascript:void(0)" (click)="remove_record(s.Sid)">Remove</a>
+      </td>
+  </tr>
+    </table>

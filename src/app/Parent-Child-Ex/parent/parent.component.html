@@ -1,0 +1,14 @@
+<h3>Componanat Communication</h3>
+<hr/>
+
+Selected job:
+<select [(ngModel)]="selectedjob" (change)="getEmploye()">
+    <option selected>All Employees</option>
+    <option >Manager</option>
+    <option >Clerk</option>
+    <option >Salesman</option>
+</select>
+
+<div>
+    <app-emp [empData]="this.temparray"></app-emp>
+</div>
